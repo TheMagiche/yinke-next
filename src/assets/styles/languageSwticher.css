@@ -1,0 +1,44 @@
+.language-switcher {
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(17.4px);
+    -webkit-backdrop-filter: blur(17.4px);
+    @apply fixed z-[100] flex bottom-4 left-4 rounded-[2.5rem] gap-x-4 m-0 p-0;
+}
+
+.language-switcher span .image {
+    @apply w-8 h-8 rounded-full;
+}
+
+.language-switcher span h6 {
+    @apply my-auto;
+}
+
+.language-switcher span.selections {
+    @apply hidden cursor-pointer px-4 py-2 rounded-[2.5rem];
+}
+
+.language-switcher span.current-language {
+    @apply flex w-max min-w-max align-middle gap-x-4 cursor-pointer px-4 py-2 rounded-[2.5rem];
+}
+
+.language-switcher:hover span.selections {
+    @apply flex w-max min-w-max align-middle gap-x-4;
+    animation: slideaway 1000ms ease-in-out;
+}
+
+.language-switcher span.selections:hover {
+   @apply bg-slate-600 text-white;
+   transition: background-color 1000ms ease-in-out;
+   transition: color 500ms ease-in-out;
+}
+
+@keyframes slideaway {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,37 @@
+.full-page-trigger {
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    @apply flex gap-x-6 fixed top-16 right-10 z-[99] cursor-pointer rounded-[2.5rem] px-6 py-2;
+}
+
+.full-page-trigger img {
+    @apply w-12;
+}
+
+.full-page-trigger .trigger {
+    @apply w-12 h-6 my-auto ;
+}
+
+.full-page-trigger .trigger .bar {
+    @apply rounded-[2.5rem] bg-black h-[2px] w-8 mx-2 mt-2;
+}
+
+.full-screen-nav {
+    @apply z-[99] fixed top-0 left-0 w-full h-full overflow-hidden bg-yinke-background;
+}
+
+.full-screen-nav .full-screen-bg {
+    @apply h-[32vh]
+}
+
+.full-screen-nav .full-page-link {
+    @apply flex justify-end text-right text-[4rem] border-b-[.5px] px-8 border-slate-400 font-light;
+}
+
+.full-screen-nav .full-page-link:hover {
+    @apply text-white bg-yinke-yellow;
+    transition: background-color 1000ms ease-in-out;
+    /* transition: color 1000ms; */
+}

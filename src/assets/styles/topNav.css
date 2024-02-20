@@ -1,0 +1,30 @@
+.top-right-nav {
+   @apply fixed right-10 top-4 z-[80] flex flex-col justify-end text-right;
+}
+
+.top-right-nav .link-top{
+    @apply relative block;
+}
+
+.top-right-nav .link-top span{
+    @apply relative uppercase font-medium;
+}
+
+.top-right-nav .link-top div{
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 1px;
+    background-color: rgb(8, 8, 8);
+    transition: width 300ms ease-in-out;
+}
+
+.top-right-nav .link-top:hover div { 
+    width: 100%;
+}
+
+.top-left-nav {
+    @apply fixed left-4 top-4 z-[80];
+ }

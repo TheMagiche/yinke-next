@@ -1,0 +1,30 @@
+.footer {
+    @apply z-[80] flex flex-col justify-end text-right;
+}
+
+.footer .bottom-bar {
+    @apply flex justify-end gap-x-6 px-5 py-5;
+}
+
+.footer .bottom-bar .footer-link {
+    @apply relative block;
+}
+
+.footer .bottom-bar .footer-link span {
+    @apply relative uppercase font-medium;
+}
+
+.footer .bottom-bar .footer-link div {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 1px;
+    background-color: rgb(8, 8, 8);
+    transition: width 300ms ease-in-out;
+}
+
+.footer .bottom-bar .footer-link:hover div {
+    width: 100%;
+}

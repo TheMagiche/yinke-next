@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('../assets/styles/languageSwticher.css');
+@import url('../assets/styles/homepage.css');
+@import url('../assets/styles/topNav.css');
+@import url('../assets/styles/fullPageNav.css');
+@import url('../assets/styles/footer.css');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    @apply bg-yinke-background;
+    /* scroll-behavior: smooth; */
+}

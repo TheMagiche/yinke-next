@@ -1,0 +1,225 @@
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+} 
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
+
+.homepage {
+  @apply flex min-h-screen flex-col gap-10 py-24;
+}
+
+.landing-strip {
+  @apply h-[40vh] px-5 mt-24;
+}
+
+.landing-strip h2 {
+  @apply font-medium capitalize p-0 m-0 leading-none
+}
+
+.landing-strip h2.main-text {
+  @apply text-yinke-yellow text-[6rem];
+}
+
+.landing-strip h2.alt-text {
+  @apply text-slate-600 text-[4rem];
+}
+
+.homepage .video-wrapper {
+  @apply relative bg-yinke-yellow w-full h-[65vh] overflow-hidden;
+}
+
+.homepage .video-wrapper .video-player {
+  object-fit: cover;
+  @apply absolute top-0 left-0 right-0 bottom-0 z-[1] w-full;
+}
+
+.homepage .our-story {
+  @apply flex justify-between gap-x-10 px-8 py-10 align-middle;
+}
+
+.our-story .left {
+  @apply w-1/4 my-auto;
+}
+
+.our-story .left h4 {
+  @apply text-[1rem] uppercase text-center;
+}
+
+.our-story .right {
+  @apply text-[1.4rem] leading-[2.8rem] w-3/4;
+}
+
+.vision-mission {
+  @apply flex gap-x-10 px-8 py-10 align-middle border-t-[1px] border-slate-300;
+}
+
+.vision-mission div.text-box {
+  @apply w-[1/3] text-left text-[1rem] leading-[2.5rem];
+}
+
+.vision-mission div.text-box span {
+  @apply font-semibold uppercase leading-tight;
+}
+
+.our-story-button {
+  @apply flex gap-x-10 px-8 justify-end py-16 align-middle border-[1px] border-slate-300;
+}
+
+.our-story-button .button-cls {
+  @apply relative border-[1px] cursor-pointer border-slate-600 flex rounded-[2.5rem] align-middle gap-x-4 m-0 pl-12 mr-16
+}
+
+.our-story-button .button-cls .background {
+  @apply absolute top-0 left-0 h-full w-full bg-slate-600 rounded-[2.5rem] z-[1]
+}
+
+.our-story-button .button-cls .text {
+  @apply flex-grow my-auto text-white z-[2]
+}
+
+.our-story-button .button-cls .icon {
+  @apply flex justify-center align-middle w-16 h-16 rounded-[2.5rem] text-white bg-slate-600 z-[2]
+}
+
+.our-story-button .button-cls:hover .background {
+  @apply opacity-0;
+  transition: opacity .6s ease-in-out;
+}
+
+.our-story-button .button-cls:hover .text {
+  @apply text-slate-600;
+}
+
+.panel {
+  @apply w-full h-[90vh] flex gap-x-10 px-8 py-[3rem];
+}
+
+.panel div.section {
+  flex: 1;
+  @apply h-full;
+}
+
+.panel .video-wrapper {
+  @apply relative bg-yinke-yellow h-[100%] w-full overflow-hidden;
+}
+
+.panel .video-wrapper .video-player {
+  object-fit: cover;
+  @apply absolute top-0 left-0 bottom-0 right-0 h-full w-full z-[1];
+}
+
+.panel div.title-section {
+  @apply flex flex-col gap-y-10;
+}
+
+.panel div.title-section h4 {
+  @apply text-[2rem] text-slate-600 uppercase font-medium;
+}
+
+.panel div.title-section span {
+  @apply text-yinke-yellow uppercase;
+}
+
+.panel div.actions-section {
+  @apply flex flex-col justify-between;
+}
+
+.panel div.actions-section {
+  @apply flex flex-col justify-between;
+}
+
+.panel div.actions-section .button-cls {
+  @apply flex justify-end cursor-pointer;
+}
+
+.panel div.actions-section .button-cls .icon {
+  @apply flex justify-center align-middle w-16 h-16 rounded-[2.5rem] text-slate-600 border border-slate-600 z-[2];
+}
+
+.panel div.actions-section .button-cls:hover .icon {
+  @apply flex justify-center align-middle w-16 h-16 rounded-[2.5rem] text-slate-600 bg-white border border-slate-600 z-[2];
+  transition: background-color 300ms ease-in-out;
+}
+
+.homepage .alt-section {
+  @apply h-[150vh] bg-yinke-yellow relative;
+}
+
+.homepage .alt-section .video-wrapper {
+  @apply absolute top-[10%] left-[50%] w-[60%] h-[15vw];
+  transform: translate(-50%, -50%);
+}
+
+.homepage .alt-section .video-wrapper .video-player {
+  object-fit: cover;
+  @apply absolute top-0 left-0 bottom-0 right-0 h-full w-full z-[1];
+}
+
+.homepage .alt-section .initial-heading {
+  @apply absolute top-[20%] left-[50%] w-[60%] h-[15vw];
+  transform: translate(-50%, -50%);
+}
+
+.homepage .alt-section .initial-heading h2 {
+  @apply text-white text-[6rem] text-center
+}
+
+.homepage .alt-section .sub-text-heading {
+  @apply absolute top-[60%] left-[50%] w-[60%] h-max flex flex-col justify-between align-middle;
+  transform: translate(-50%, -50%);
+}
+
+.homepage .alt-section .sub-text-heading .sub-text {
+  @apply text-white text-[2.2rem] text-center;
+}
+.homepage .alt-section .sub-text-heading .button-container {
+  @apply flex justify-center align-middle py-10;
+}
+.homepage .alt-section .sub-text-heading .button-cls {
+  @apply relative w-[1/3] border-[1px] cursor-pointer border-white flex rounded-[2.5rem] align-middle gap-x-4 m-0 pl-12 mr-16;
+}
+
+.homepage .alt-section .sub-text-heading .button-cls .background {
+  @apply absolute top-0 left-0 h-full w-full bg-yinke-background rounded-[2.5rem] z-[1];
+}
+
+.homepage .alt-section .sub-text-heading .button-cls .text {
+  @apply flex-grow my-auto text-slate-600 z-[2];
+}
+
+.homepage .alt-section .sub-text-heading .button-cls .icon {
+  @apply flex justify-center align-middle w-16 h-16 rounded-[2.5rem] text-slate-600 bg-yinke-background z-[2];
+}
+
+.homepage .alt-section .sub-text-heading .button-cls:hover .background {
+  @apply opacity-0;
+  transition: opacity .6s ease-in-out;
+}
+
+.homepage .alt-section .sub-text-heading .button-cls:hover .text {
+  @apply text-white;
+}
