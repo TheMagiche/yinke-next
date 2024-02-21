@@ -1,0 +1,26 @@
+.marquee__inner {
+    -webkit-font-smoothing: antialiased;
+    width: fit-content;
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+    @apply relative gap-x-7;
+}
+
+.marquee__inner .marquee__part {
+    @apply border-slate-600 rounded-lg p-1 flex flex-col;
+}
+
+.marquee__inner .marquee__part .flag-bg {
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(17.4px);
+    -webkit-backdrop-filter: blur(17.4px);
+    @apply absolute top-0 left-0 w-full z-[-1] h-full;
+}
+
+.marquee__inner .marquee__part .flag {
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    @apply rounded-md;
+}

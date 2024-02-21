@@ -7,7 +7,7 @@
 }
 
 .top-right-nav .link-top span{
-    @apply relative uppercase font-medium;
+    @apply relative uppercase font-medium text-yinke-yellow;
 }
 
 .top-right-nav .link-top div{

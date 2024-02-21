@@ -77,8 +77,12 @@ body {
   @apply flex gap-x-10 px-8 py-10 align-middle border-t-[1px] border-slate-300;
 }
 
+.vision-mission .fancy-box { 
+  @apply w-1/4;
+}
+
 .vision-mission div.text-box {
-  @apply w-[1/3] text-left text-[1rem] leading-[2.5rem];
+  @apply text-left text-[1rem] leading-[2.5rem];
 }
 
 .vision-mission div.text-box span {
@@ -114,59 +118,8 @@ body {
   @apply text-slate-600;
 }
 
-.panel {
-  @apply w-full h-[90vh] flex gap-x-10 px-8 py-[3rem];
-}
-
-.panel div.section {
-  flex: 1;
-  @apply h-full;
-}
-
-.panel .video-wrapper {
-  @apply relative bg-yinke-yellow h-[100%] w-full overflow-hidden;
-}
-
-.panel .video-wrapper .video-player {
-  object-fit: cover;
-  @apply absolute top-0 left-0 bottom-0 right-0 h-full w-full z-[1];
-}
-
-.panel div.title-section {
-  @apply flex flex-col gap-y-10;
-}
-
-.panel div.title-section h4 {
-  @apply text-[2rem] text-slate-600 uppercase font-medium;
-}
-
-.panel div.title-section span {
-  @apply text-yinke-yellow uppercase;
-}
-
-.panel div.actions-section {
-  @apply flex flex-col justify-between;
-}
-
-.panel div.actions-section {
-  @apply flex flex-col justify-between;
-}
-
-.panel div.actions-section .button-cls {
-  @apply flex justify-end cursor-pointer;
-}
-
-.panel div.actions-section .button-cls .icon {
-  @apply flex justify-center align-middle w-16 h-16 rounded-[2.5rem] text-slate-600 border border-slate-600 z-[2];
-}
-
-.panel div.actions-section .button-cls:hover .icon {
-  @apply flex justify-center align-middle w-16 h-16 rounded-[2.5rem] text-slate-600 bg-white border border-slate-600 z-[2];
-  transition: background-color 300ms ease-in-out;
-}
-
 .homepage .alt-section {
-  @apply h-[150vh] bg-yinke-yellow relative;
+  @apply h-[150vh] bg-slate-900 relative;
 }
 
 .homepage .alt-section .video-wrapper {
@@ -185,7 +138,7 @@ body {
 }
 
 .homepage .alt-section .initial-heading h2 {
-  @apply text-white text-[6rem] text-center
+  @apply text-white text-[6rem] text-center;
 }
 
 .homepage .alt-section .sub-text-heading {
@@ -222,4 +175,20 @@ body {
 
 .homepage .alt-section .sub-text-heading .button-cls:hover .text {
   @apply text-white;
+}
+
+.homepage .locations {
+  @apply flex justify-between gap-x-10 px-8 py-10 align-middle;
+}
+
+.locations .left {
+  @apply w-1/4 my-auto;
+}
+
+.locations .left h4 {
+  @apply text-[1rem] uppercase text-center;
+}
+
+.locations .marquee {
+  @apply overflow-hidden px-3 py-4 rounded-lg w-3/4;
 }

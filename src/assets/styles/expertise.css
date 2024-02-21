@@ -1,0 +1,104 @@
+.expertise {
+    @apply flex min-h-screen flex-col gap-10;
+}
+
+.expertise .alt-section {
+    @apply bg-slate-900 m-0 py-24 min-h-screen;
+}
+
+.expertise .alt-section .landing-strip {
+    @apply flex h-screen;
+}
+
+.expertise .landing-strip .left {
+    @apply w-1/2 flex flex-col justify-center align-middle;
+}
+
+.expertise .landing-strip .right {
+    @apply w-1/2 flex justify-end px-8;
+}
+
+.expertise .landing-strip .right .video-wrapper {
+    @apply relative h-[60%] my-auto w-[60%] overflow-hidden;
+}
+
+.expertise .landing-strip .right .video-wrapper .video-player {
+    object-fit: cover;
+    @apply h-full;
+}
+
+.expertise .panel {
+    @apply bg-yinke-background;
+}
+
+.expertise .our-expertise {
+    @apply flex justify-between gap-x-10 px-8 py-10 align-middle;
+}
+
+.expertise .our-expertise .left {
+    @apply w-1/4 my-auto;
+}
+
+.expertise .our-expertise .left h4 {
+    @apply text-[.8rem] uppercase text-white text-center;
+}
+
+.expertise .our-expertise .right {
+    @apply text-[1.9rem] text-white text-right px-8 leading-[2.8rem] w-3/4;
+}
+
+.expertise .expertise-overview {
+    @apply flex h-full px-8 mt-16 gap-x-10 min-h-screen text-white;
+}
+
+.expertise .expertise-overview .section-text {
+    @apply w-[60%] h-screen my-auto;
+}
+
+.expertise .expertise-overview .video-wrapper {
+    @apply relative h-screen my-auto w-[40%] px-8 overflow-hidden;
+}
+
+.expertise .expertise-overview .video-wrapper .video-player {
+    object-fit: cover;
+    @apply h-full;
+}
+
+.expertise .expertise-overview .section-text .title-text {
+    @apply p-4;
+}
+
+.expertise .expertise-overview .section-text .title-text h3 {
+    @apply uppercase flex m-0 p-0;
+}
+
+.expertise .expertise-overview .section-text .sub-title {
+    @apply flex gap-x-2 px-8;
+}
+.expertise .expertise-overview .section-text .sub-title .fancy-box {
+    @apply w-1/4;
+}
+
+.expertise .expertise-overview .section-text .sub-title .sub-title-text {
+    @apply w-3/4 py-4;
+}
+
+.expertise .expertise-overview .section-text .competence-section {
+    @apply flex gap-x-2;
+}
+
+.expertise .expertise-overview .section-text .competence-section .competence-title {
+    @apply uppercase w-1/4 p-4;
+}
+
+.expertise .expertise-overview .section-text .competence-section .competencies {
+    @apply w-3/4 p-4;
+}
+
+.expertise .expertise-overview .section-text .competence-section .competencies span {
+    @apply border-b-[1px] block border-slate-100 py-4;
+}
+
+.expertise .expertise-overview .section-text .competence-section .competencies span:last-child {
+    @apply border-none
+}

@@ -1,5 +1,6 @@
 "use client";
 
+import CountriesMarquee from "@/src/components/CountriesMarquee";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import React, { useLayoutEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -213,6 +214,14 @@ export default function Home() {
               </span>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="locations">
+        <div className="left">
+          <h4>Where we are</h4>
+        </div>
+        <div className="marquee">
+          <CountriesMarquee />
         </div>
       </div>
     </main>

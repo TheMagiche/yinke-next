@@ -7,6 +7,9 @@
 @import url('../assets/styles/topNav.css');
 @import url('../assets/styles/fullPageNav.css');
 @import url('../assets/styles/footer.css');
+@import url('../assets/styles/marquee.css');
+@import url('../assets/styles/expertise.css');
+@import url('../assets/styles/common.css');
 
 html, body {
     margin: 0;

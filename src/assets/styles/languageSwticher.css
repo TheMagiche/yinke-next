@@ -11,7 +11,7 @@
 }
 
 .language-switcher span h6 {
-    @apply my-auto;
+    @apply my-auto text-yinke-yellow;
 }
 
 .language-switcher span.selections {
