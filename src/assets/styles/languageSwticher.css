@@ -1,44 +1,53 @@
 .language-switcher {
-    background: rgba(255, 255, 255, 0.09);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(17.4px);
-    -webkit-backdrop-filter: blur(17.4px);
-    @apply fixed z-[100] flex bottom-4 left-4 rounded-[2.5rem] gap-x-4 m-0 p-0;
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  background: rgba(14, 14, 14, 0.72);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--noir-slate);
+  clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
 }
 
-.language-switcher span .image {
-    @apply w-8 h-8 rounded-full;
+.language-switcher .current-language,
+.language-switcher .selections {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
 }
 
-.language-switcher span h6 {
-    @apply my-auto text-yinke-yellow;
+.language-switcher .image {
+  width: 1.15rem;
+  height: auto;
+  border-radius: 0;
+  opacity: 0.9;
 }
 
-.language-switcher span.selections {
-    @apply hidden cursor-pointer px-4 py-2 rounded-[2.5rem];
+.language-switcher h6 {
+  margin: 0;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--noir-mist);
 }
 
-.language-switcher span.current-language {
-    @apply flex w-max min-w-max align-middle gap-x-4 cursor-pointer px-4 py-2 rounded-[2.5rem];
+.language-switcher .current-language h6 {
+  color: var(--noir-gold);
 }
 
-.language-switcher:hover span.selections {
-    @apply flex w-max min-w-max align-middle gap-x-4;
-    animation: slideaway 1000ms ease-in-out;
+.language-switcher .selections:hover h6 {
+  color: var(--noir-paper);
 }
 
-.language-switcher span.selections:hover {
-   @apply bg-slate-600 text-white;
-   transition: background-color 1000ms ease-in-out;
-   transition: color 500ms ease-in-out;
-}
-
-@keyframes slideaway {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+@media (max-width: 768px) {
+  .language-switcher {
+    top: 0.85rem;
+    right: 0.85rem;
+  }
 }

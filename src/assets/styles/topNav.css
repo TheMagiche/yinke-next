@@ -1,30 +1,57 @@
-.top-right-nav {
-   @apply fixed right-10 top-4 z-[80] flex flex-col justify-end text-right;
-}
-
-.top-right-nav .link-top{
-    @apply relative block;
-}
-
-.top-right-nav .link-top span{
-    @apply relative uppercase font-medium text-yinke-yellow;
-}
-
-.top-right-nav .link-top div{
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0%;
-    height: 1px;
-    background-color: rgb(8, 8, 8);
-    transition: width 300ms ease-in-out;
-}
-
-.top-right-nav .link-top:hover div { 
-    width: 100%;
-}
-
 .top-left-nav {
-    @apply fixed left-4 top-4 z-[80];
- }
+  position: fixed;
+  top: 1.25rem;
+  left: 1.25rem;
+  z-index: 110;
+}
+
+.top-left-nav .link-top img {
+  width: 7rem;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.top-right-nav {
+  position: fixed;
+  top: 1.5rem;
+  right: 8rem;
+  z-index: 100;
+  display: flex;
+  gap: 1.75rem;
+}
+
+.top-right-nav .link-top {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--noir-mist);
+  transition: color 0.25s ease;
+}
+
+.top-right-nav .link-top span {
+  position: relative;
+}
+
+.top-right-nav .link-top span div {
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: var(--noir-gold);
+  transition: width 0.3s ease;
+}
+
+.top-right-nav .link-top:hover {
+  color: var(--noir-gold);
+}
+
+.top-right-nav .link-top:hover span div {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .top-right-nav {
+    display: none;
+  }
+}

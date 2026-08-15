@@ -1,30 +1,58 @@
 .footer {
-    @apply z-[80] flex flex-col justify-end text-right;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--noir-slate);
+  background: var(--noir-ink);
+}
+
+.footer .fancy-box {
+  display: none;
 }
 
 .footer .bottom-bar {
-    @apply flex justify-end gap-x-6 px-5 py-5;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  padding: 2.5rem 4rem;
+  align-items: center;
 }
 
-.footer .bottom-bar .footer-link {
-    @apply relative block;
+.footer-link {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--noir-mist);
+  transition: color 0.25s ease;
 }
 
-.footer .bottom-bar .footer-link span {
-    @apply relative uppercase font-medium;
+.footer-link span {
+  position: relative;
+  display: inline-block;
 }
 
-.footer .bottom-bar .footer-link div {
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0%;
-    height: 1px;
-    background-color: rgb(8, 8, 8);
-    transition: width 300ms ease-in-out;
+.footer-link span div {
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: var(--noir-gold);
+  transition: width 0.3s ease;
 }
 
-.footer .bottom-bar .footer-link:hover div {
-    width: 100%;
+.footer-link:hover {
+  color: var(--noir-gold);
+}
+
+.footer-link:hover span div {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .footer .bottom-bar {
+    padding: 2rem 1.75rem;
+    gap: 1rem 1.5rem;
+  }
 }

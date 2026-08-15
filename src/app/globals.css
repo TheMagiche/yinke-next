@@ -2,19 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('../assets/styles/languageSwticher.css');
-@import url('../assets/styles/homepage.css');
-@import url('../assets/styles/topNav.css');
-@import url('../assets/styles/fullPageNav.css');
-@import url('../assets/styles/footer.css');
-@import url('../assets/styles/marquee.css');
-@import url('../assets/styles/expertise.css');
-@import url('../assets/styles/common.css');
+@import url("../assets/styles/languageSwticher.css");
+@import url("../assets/styles/homepage.css");
+@import url("../assets/styles/topNav.css");
+@import url("../assets/styles/fullPageNav.css");
+@import url("../assets/styles/footer.css");
+@import url("../assets/styles/marquee.css");
+@import url("../assets/styles/expertise.css");
+@import url("../assets/styles/common.css");
+@import url("../assets/styles/about.css");
 
-html, body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    @apply bg-yinke-background;
-    /* scroll-behavior: smooth; */
+:root {
+  --noir-void: #070707;
+  --noir-ink: #0e0e0e;
+  --noir-charcoal: #161616;
+  --noir-slate: #2a2a2a;
+  --noir-mist: #8a8a8a;
+  --noir-paper: #edeae3;
+  --noir-fold: #d4cfc4;
+  --noir-crease: #b8b2a6;
+  --noir-gold: #c4a46a;
+  --noir-gold-dim: #9a7d4a;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--noir-void);
+  color: var(--noir-paper);
+  font-family: var(--font-body), "PingFang SC", "Noto Sans SC", "Microsoft YaHei",
+    system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--noir-gold);
+  color: var(--noir-void);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
 }

@@ -9,9 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'yinke-background': '#EDEBE7',
-        'yinke-yellow': "#BE9D6D"
-      }
+        noir: {
+          void: "#070707",
+          ink: "#0E0E0E",
+          charcoal: "#161616",
+          slate: "#2A2A2A",
+          mist: "#8A8A8A",
+          paper: "#EDEAE3",
+          fold: "#D4CFC4",
+          crease: "#B8B2A6",
+        },
+        "yingke-background": "#070707",
+        "yingke-yellow": "#C4A46A",
+      },
+      fontFamily: {
+        display: ["var(--font-display)", "Georgia", "serif"],
+        body: ["var(--font-body)", "system-ui", "sans-serif"],
+      },
     },
   },
   plugins: [],

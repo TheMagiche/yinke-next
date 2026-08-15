@@ -1,0 +1,5 @@
+.about-us {
+  background: var(--noir-void);
+  color: var(--noir-paper);
+  min-height: 100vh;
+}

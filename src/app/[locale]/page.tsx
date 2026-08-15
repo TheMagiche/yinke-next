@@ -1,229 +1,168 @@
 "use client";
 
-import CountriesMarquee from "@/src/components/CountriesMarquee";
+import AfricaMap, {
+  MAP_COUNTRIES,
+  MAP_DEFAULT_COUNTRY,
+  mapFlagUrl,
+} from "@/src/components/AfricaMap";
+import ContactForm from "@/src/components/ContactForm";
+import OrigamiFolds from "@/src/components/OrigamiFolds";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import React, { useLayoutEffect } from "react";
+import Link from "next/link";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-// import vid from '@/public/video.mp4';/
+import { useLocalePrefix } from "@/src/utils/useLocalePrefix";
 
 export default function Home() {
   const { t } = useTranslation();
+  const prefix = useLocalePrefix();
+  const [activeCountry, setActiveCountry] = useState(MAP_DEFAULT_COUNTRY);
+  const flagUrl = mapFlagUrl(activeCountry);
+  const [layerA, setLayerA] = useState(flagUrl);
+  const [layerB, setLayerB] = useState(flagUrl);
+  const [frontLayer, setFrontLayer] = useState<"a" | "b">("a");
 
   useLayoutEffect(() => {
     (async () => {
       // @ts-ignore
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
-      const locomotiveScroll = new LocomotiveScroll();
+      new LocomotiveScroll();
     })();
+  }, []);
+
+  useEffect(() => {
+    const current = frontLayer === "a" ? layerA : layerB;
+    if (flagUrl === current) return;
+    if (frontLayer === "a") {
+      setLayerB(flagUrl);
+      setFrontLayer("b");
+    } else {
+      setLayerA(flagUrl);
+      setFrontLayer("a");
+    }
+  }, [flagUrl, frontLayer, layerA, layerB]);
+
+  useEffect(() => {
+    MAP_COUNTRIES.forEach((name) => {
+      const img = new Image();
+      img.src = mapFlagUrl(name);
+    });
   }, []);
 
   return (
     <main className="homepage">
-      <div className="landing-strip">
-        <h2 className="main-text">Yinke Africa</h2>
-        <h2 className="alt-text">Unparalleled deliverance</h2>
-      </div>
-      <div className="video-wrapper">
-        <video className="video-player" autoPlay loop muted playsInline>
-          <source src={require("../../../public/bgvid.mp4")} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      <div className="our-story">
-        <div className="left">
-          <h4>Our story</h4>
+      {/* Hero — brand first, one composition */}
+      <section className="hero">
+        <OrigamiFolds variant="hero" />
+        <div className="hero-flag" aria-hidden>
+          <div
+            className="hero-flag-layer"
+            style={{
+              backgroundImage: `url(${layerA})`,
+              opacity: frontLayer === "a" ? 1 : 0,
+            }}
+          />
+          <div
+            className="hero-flag-layer"
+            style={{
+              backgroundImage: `url(${layerB})`,
+              opacity: frontLayer === "b" ? 1 : 0,
+            }}
+          />
         </div>
-        <div className="right">
-          <p>
-            As a global law firm from China, Yingke aims to serve the world with
-            “one-stop” legal and commercial services. Yingke Law Firm, a leading
-            law firm in China, was established in 2001 with our headquarters in
-            Beijing. Today, we have 97 domestic branches and 83 member law firms
-            of Yingke Global Legal Service Network – located in key financial,
-            business and regulatory centers in Africa, Asia, Europe, South
-            America and North America
-          </p>
+        <div className="hero-content">
+          <p className="hero-kicker">{t("home.mapTitle")}</p>
+          <h1 className="hero-brand">{t("home.brand")}</h1>
+          <p className="hero-tagline">{t("home.tagline")}</p>
+          <Link href={`${prefix}/about`} className="origami-btn">
+            <span>{t("home.whoWeAre")}</span>
+            <ArrowRightIcon className="w-4 h-4" />
+          </Link>
         </div>
-      </div>
-      <div className="vision-mission">
-        <div className="fancy-box"></div>
-        <div className="text-box">
-          <p>
-            At Yingke Africa Consultancy Limited, our vision is clear and
-            unwavering: to be the premier provider of business consultancy
-            services globally. We aspire to set new standards of excellence,
-            fostering growth and prosperity for our clients by providing them
-            with strategic insights needed to succeed in an ever-evolving
-            business landscape.
-          </p>
-          <span>Vision</span>
+        <div className="hero-map">
+          <AfricaMap active={activeCountry} onActiveChange={setActiveCountry} />
         </div>
-        <div className="text-box">
-          <p>
-            At Yingke Africa Consultancy Limited, our vision is clear and
-            unwavering: to be the premier provider of business consultancy
-            services globally. We aspire to set new standards of excellence,
-            fostering growth and prosperity for our clients by providing them
-            with strategic insights needed to succeed in an ever-evolving
-            business landscape.
-          </p>
-          <span>Mission</span>
-        </div>
-      </div>
-      <div className="our-story-button">
-        <div className="fancy-box"></div>
-        <div className="button-container">
-          <div className="button-cls">
-            <div className="background"></div>
-            <div className="text">Who we are</div>
-            <span className="icon">
-              <ArrowRightIcon className="w-4 my-auto" />
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className="panel">
-        <div className="video-wrapper section">
+      </section>
+
+      {/* Our story */}
+      <section className="fold-section story-section">
+        <div className="fold-label">{t("home.ourStory")}</div>
+        <p className="fold-copy">{t("home.storyText")}</p>
+      </section>
+
+      {/* Vision / Mission — origami facets */}
+      <section className="facet-row">
+        <article className="facet">
+          <OrigamiFolds variant="panel" />
+          <span className="facet-label">{t("home.vision")}</span>
+          <p>{t("home.visionText")}</p>
+        </article>
+        <article className="facet facet-alt">
+          <OrigamiFolds variant="panel" />
+          <span className="facet-label">{t("home.mission")}</span>
+          <p>{t("home.missionText")}</p>
+        </article>
+      </section>
+
+      {/* Practice areas */}
+      <section className="practice-block">
+        <div className="practice-media">
           <video className="video-player" autoPlay loop muted playsInline>
-            <source
-              src={require("../../../public/bgvid.mp4")}
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
+            <source src={require("../../../public/bgvid.mp4")} type="video/mp4" />
           </video>
+          <div className="practice-media-mask" aria-hidden />
         </div>
-        <div className="title-section section">
-          <div className="title">
-            <h4>Banking & Finance Law</h4>
-            <span>What we do</span>
-          </div>
-          {/* <div className="paragraph-text">
-            Changes within the financial services industry are a challenge to
-            all law firms. Regulations are forever changing and just when you
-            feel you are on top of it another comes along. Whilst there is a
-            certain framework that the financial services industry operates
-            within, it is our knowledge of regulatory, fiscal and economic
-            systems that will assist our clients to successfully navigate the
-            industry and avoid the pitfalls.
-          </div> */}
+        <div className="practice-body">
+          <p className="practice-eyebrow">{t("home.whatWeDo")}</p>
+          <h2>{t("home.bankingTitle")}</h2>
+          <p>{t("home.bankingText")}</p>
+          <Link href={`${prefix}/expertise`} className="origami-btn ghost">
+            <span>{t("home.whatWeDo")}</span>
+            <ArrowRightIcon className="w-4 h-4" />
+          </Link>
         </div>
-        <div className="actions-section section">
-          <div className="button-cls">
-            <span className="icon">
-              <ArrowRightIcon className="w-4 my-auto" />
-            </span>
-          </div>
-          <div className="paragraph-text">
-            We understand the world of commercial banks, private equity, hedge
-            funds and other asset managers, insurance companies and financial
-            technology providers. Our specialist lawyers often come from a
-            financial background or have been seconded to exactly these kinds of
-            businesses. We have built our reputation by combining accurate
-            professional reasoning with an entrepreneurial attitude. Our advice
-            is always focused on results. We offer expert advice on investments,
-            regulation, transactions, payments, disputes, technology and all
-            issues that face the financial services world.
-          </div>
-        </div>
-      </div>
-      <div className="panel">
-        <div className="video-wrapper section">
+      </section>
+
+      <section className="practice-block reverse">
+        <div className="practice-media">
           <video className="video-player" autoPlay loop muted playsInline>
-            <source
-              src={require("../../../public/bgvid.mp4")}
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
+            <source src={require("../../../public/bgvid.mp4")} type="video/mp4" />
           </video>
+          <div className="practice-media-mask" aria-hidden />
         </div>
-        <div className="title-section section">
-          <div className="title">
-            <h4>LITIGATION & ARBITRATION</h4>
-            <span>What we do</span>
-          </div>
-          {/* <div className="paragraph-text">
-            Yingke takes pride in serving its clients in a way that builds
-            relationships. We understand that One of the most stressful aspects
-            for our business relationships is litigation. Our aim is to help our
-            clients to avoid legal battles, avoid the cost and avoid the risk.
-            However, when it is unavoidable, we are there for you with a full
-            battery of experienced professionals who will use all legal means to
-            help you win the argument.
-          </div> */}
+        <div className="practice-body">
+          <p className="practice-eyebrow">{t("home.whatWeDo")}</p>
+          <h2>{t("home.litigationTitle")}</h2>
+          <p>{t("home.litigationText")}</p>
         </div>
-        <div className="actions-section section">
-          <div className="button-cls">
-            <span className="icon">
-              <ArrowRightIcon className="w-4 my-auto" />
-            </span>
-          </div>
-          <div className="paragraph-text">
-            Yingke litigators have tried cases throughout the world before
-            national and international courts and arbitration panels. Our
-            approach is straightforward: we make sure we understand your
-            business model, your corporate goals and your budget. We conduct
-            litigation in a methodical manner that maximizes the opportunity for
-            a successful outcome and minimizes costs. We are experienced in
-            negotiating cases to a favorable position to increase pressure on
-            our adversary to settle the case without the expense and risk of a
-            trial. Our experts are trained and experiences to represent clients
-            in various jurisdictions. We have solid track record of arbitration
-            mandates from numerous recognized arbitration centers all across
-            Asia and Europe.
-          </div>
+      </section>
+
+      {/* Global / Local */}
+      <section className="mindset-section">
+        <OrigamiFolds variant="hero" />
+        <div className="mindset-inner">
+          <h2>
+            <span>{t("home.globalMindset")}</span>
+            <span className="mindset-amp">&</span>
+            <span>{t("home.localInstinct")}</span>
+          </h2>
+          <p>{t("home.altSubText")}</p>
+          <Link href={`${prefix}/contact`} className="origami-btn">
+            <span>{t("home.reachUs")}</span>
+            <ArrowRightIcon className="w-4 h-4" />
+          </Link>
         </div>
-      </div>
-      <div className="our-story-button">
-        <div className="fancy-box"></div>
-        <div className="button-container">
-          <div className="button-cls">
-            <div className="background"></div>
-            <div className="text">What we do</div>
-            <span className="icon">
-              <ArrowRightIcon className="w-4 my-auto" />
-            </span>
-          </div>
+      </section>
+
+      {/* Contact */}
+      <section className="contact-section">
+        <div className="contact-section-intro">
+          <p className="practice-eyebrow">{t("nav.contact")}</p>
+          <h2 className="fold-label">{t("home.reachUs")}</h2>
+          <p>{t("home.altSubText")}</p>
         </div>
-      </div>
-      <div className="alt-section">
-        <div className="video-wrapper">
-          <video className="video-player" autoPlay loop muted playsInline>
-            <source
-              src={require("../../../public/bgvid.mp4")}
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div className="initial-heading">
-          <h2 className="upper-text">Global Mindset</h2>
-          <h2 className="lower-text">Local Instinct</h2>
-        </div>
-        <div className="sub-text-heading">
-          <div className="sub-text">
-            At Yingke Africa Consultancy Limited, we are your
-            strategic partners in navigating and conquering the dynamic business
-            landscape of Africa.
-          </div>
-          <div className="button-container">
-            <div className="button-cls">
-              <div className="background"></div>
-              <div className="text">Reach us</div>
-              <span className="icon">
-                <ArrowRightIcon className="w-4 my-auto" />
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="locations">
-        <div className="left">
-          <h4>Where we are</h4>
-        </div>
-        <div className="marquee">
-          <CountriesMarquee />
-        </div>
-      </div>
+        <ContactForm />
+      </section>
     </main>
   );
 }

@@ -1,26 +1,61 @@
 .marquee__inner {
-    -webkit-font-smoothing: antialiased;
-    width: fit-content;
-    display: flex;
-    flex: auto;
-    flex-direction: row;
-    @apply relative gap-x-7;
+  display: flex;
+  width: max-content;
+  gap: 2.5rem;
+  animation: marquee-scroll 28s linear infinite;
 }
 
-.marquee__inner .marquee__part {
-    @apply border-slate-600 rounded-lg p-1 flex flex-col;
+.marquee__inner:hover {
+  animation-play-state: paused;
 }
 
-.marquee__inner .marquee__part .flag-bg {
-    background: rgba(255, 255, 255, 0.09);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(17.4px);
-    -webkit-backdrop-filter: blur(17.4px);
-    @apply absolute top-0 left-0 w-full z-[-1] h-full;
+.marquee__part {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.5rem 0;
+  white-space: nowrap;
 }
 
-.marquee__inner .marquee__part .flag {
-    object-fit: cover;
-    aspect-ratio: 4 / 3;
-    @apply rounded-md;
+.marquee__part .flag-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(196, 164, 106, 0.06), transparent);
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+}
+
+.marquee__part .flag {
+  position: relative;
+  width: 2.75rem;
+  height: auto;
+  object-fit: cover;
+  filter: grayscale(0.2) contrast(1.05);
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 50%, calc(100% - 6px) 100%, 0 100%);
+}
+
+.marquee__part .name {
+  position: relative;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--noir-paper);
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__inner {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }

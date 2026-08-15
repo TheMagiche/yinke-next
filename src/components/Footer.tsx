@@ -1,38 +1,46 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
+import { useTranslation } from "react-i18next";
+import { useLocalePrefix } from "../utils/useLocalePrefix";
+import OrigamiFolds from "./OrigamiFolds";
 
 const Footer = () => {
+  const { t } = useTranslation();
+  const prefix = useLocalePrefix();
+
   return (
     <div className="footer">
-      <div className="fancy-box"></div>
+      <OrigamiFolds variant="footer" />
       <div className="bottom-bar">
-      <Link className="footer-link" href={"/"}>
+        <Link className="footer-link" href={`${prefix}/`}>
           <span>
-            Home
+            {t("nav.home")}
             <div></div>
           </span>
         </Link>
-        <Link className="footer-link" href={"/expertise"}>
+        <Link className="footer-link" href={`${prefix}/expertise`}>
           <span>
-            Expertise
+            {t("nav.expertise")}
             <div></div>
           </span>
         </Link>
-        <Link className="footer-link" href={"/about"}>
+        <Link className="footer-link" href={`${prefix}/about`}>
           <span>
-            About
+            {t("nav.about")}
             <div></div>
           </span>
         </Link>
-        <Link className="footer-link" href={"/contact"}>
+        <Link className="footer-link" href={`${prefix}/contact`}>
           <span>
-            Contact
+            {t("nav.contact")}
             <div></div>
           </span>
         </Link>
-        <Link className="footer-link" href={"/contact"}>
+        <Link className="footer-link" href={`${prefix}/contact`}>
           <span>
-            Legal notice
+            {t("nav.legalNotice")}
             <div></div>
           </span>
         </Link>

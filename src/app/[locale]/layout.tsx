@@ -18,8 +18,8 @@ export default async function Layout({ children, params: { locale } }: any) {
       resources={resources}
       namespaces={i18nNamespaces}
     >
-      <TopLeftNav />
-      <TopRightNav />
+
+      {/* <TopRightNav /> */}
       <FullPageNav />
       {children}
       <LanguageSwitcher />

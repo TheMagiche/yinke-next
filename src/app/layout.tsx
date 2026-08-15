@@ -1,13 +1,25 @@
 import type { Metadata } from "next";
-import { Fredoka } from "next/font/google";
+import { Cormorant_Garamond, Outfit } from "next/font/google";
 import "./globals.css";
 import i18nConfig from "@/src/app/i18nConfig";
 
-const fredoka = Fredoka({ subsets: ["latin"] });
+const display = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const body = Outfit({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Yingke",
-  description: "Finest law firm in Africa",
+  title: "Yingke Africa",
+  description: "Global legal counsel with local instinct across Africa",
   authors: [
     {
       url: "",
@@ -28,8 +40,9 @@ export default function RootLayout({
   params: { locale: string };
 }>) {
   return (
-    <html lang={locale}>
-      <body className={fredoka.className}>{children}</body>
+    <html lang={locale} className={`${display.variable} ${body.variable}`}>
+      <link rel="icon" href="./favicon.ico" sizes="any" />
+      <body className="font-body antialiased">{children}</body>
     </html>
   );
 }
