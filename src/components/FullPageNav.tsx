@@ -14,40 +14,46 @@ export default function FullPageNav() {
   const { t } = useTranslation();
   const prefix = useLocalePrefix();
 
+  const close = () => setShowFullPageNav(false);
+
   return (
     <>
-      {showFullPageNav && <TopLeftNav />}
       {showFullPageNav && (
         <div className="full-screen-nav">
           <div className="full-screen-bg"></div>
-          <Link
-            href={`${prefix}/`}
-            onClick={() => setShowFullPageNav(false)}
-            className="full-page-link"
-          >
-            {t("nav.home")}
-          </Link>
-          <Link
-            href={`${prefix}/expertise`}
-            onClick={() => setShowFullPageNav(false)}
-            className="full-page-link"
-          >
-            {t("nav.expertise")}
-          </Link>
-          <Link
-            href={`${prefix}/about`}
-            onClick={() => setShowFullPageNav(false)}
-            className="full-page-link"
-          >
-            {t("nav.about")}
-          </Link>
-          <Link
-            href={`${prefix}/contact`}
-            onClick={() => setShowFullPageNav(false)}
-            className="full-page-link"
-          >
-            {t("nav.contact")}
-          </Link>
+          <div className="full-screen-nav-inner">
+            <TopLeftNav />
+            <nav className="full-screen-links">
+              <Link
+                href={`${prefix}/`}
+                onClick={close}
+                className="full-page-link"
+              >
+                {t("nav.home")}
+              </Link>
+              <Link
+                href={`${prefix}/expertise`}
+                onClick={close}
+                className="full-page-link"
+              >
+                {t("nav.expertise")}
+              </Link>
+              <Link
+                href={`${prefix}/about`}
+                onClick={close}
+                className="full-page-link"
+              >
+                {t("nav.about")}
+              </Link>
+              <Link
+                href={`${prefix}/contact`}
+                onClick={close}
+                className="full-page-link"
+              >
+                {t("nav.contact")}
+              </Link>
+            </nav>
+          </div>
         </div>
       )}
       {!showFullPageNav && (
@@ -63,12 +69,9 @@ export default function FullPageNav() {
         </div>
       )}
       {showFullPageNav && (
-        <div
-          className="full-page-trigger"
-          onClick={() => setShowFullPageNav(false)}
-        >
+        <div className="full-page-trigger" onClick={close}>
           <Image src={logo} alt="crop-logo" quality={100} />
-          <XMarkIcon className="h-8 w-12 my-auto text-[var(--noir-paper)]" />
+          <XMarkIcon className="h-8 w-12 my-auto text-[var(--noir-void)]" />
         </div>
       )}
     </>

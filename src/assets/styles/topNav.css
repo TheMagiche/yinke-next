@@ -1,12 +1,11 @@
 .top-left-nav {
-  position: fixed;
-  top: 1.25rem;
-  left: 1.25rem;
-  z-index: 110;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 1;
 }
 
 .top-left-nav .link-top img {
-  width: 7rem;
+  width: clamp(7rem, 18vw, 14rem);
   height: auto;
   filter: brightness(0) invert(1);
 }

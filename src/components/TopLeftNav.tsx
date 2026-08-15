@@ -10,9 +10,9 @@ const TopLeftNav = () => {
   const prefix = useLocalePrefix();
 
   return (
-    <div className="top-left-nav absolute top-0 left-0 z-50000">
+    <div className="top-left-nav">
       <Link className="link-top" href={`${prefix}/`}>
-        <Image src={logo} alt="main-logo" className="w-1/5" priority quality={100}/>
+        <Image src={logo} alt="main-logo" priority quality={100} />
       </Link>
     </div>
   );

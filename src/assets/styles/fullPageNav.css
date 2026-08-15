@@ -8,22 +8,22 @@
   gap: 0.85rem;
   padding: 0.55rem 0.85rem;
   cursor: pointer;
-  background: rgba(14, 14, 14, 0.72);
+  background: rgba(237, 234, 227, 0.92);
   backdrop-filter: blur(10px);
-  border: 1px solid var(--noir-slate);
+  border: 1px solid var(--noir-crease);
   clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%);
   transition: border-color 0.25s ease, background 0.25s ease;
 }
 
 .full-page-trigger:hover {
   border-color: var(--noir-gold);
-  background: rgba(14, 14, 14, 0.9);
+  background: rgba(237, 234, 227, 1);
 }
 
 .full-page-trigger img {
   width: 2.25rem;
   height: auto;
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 .full-page-trigger .trigger {
@@ -36,7 +36,7 @@
 .full-page-trigger .trigger .bar {
   height: 1.5px;
   width: 100%;
-  background: var(--noir-paper);
+  background: var(--noir-void);
   transition: background 0.2s ease;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .full-page-trigger svg {
-  color: var(--noir-paper);
+  color: var(--noir-void);
   width: 1.5rem;
   height: 1.5rem;
 }
@@ -55,12 +55,28 @@
   inset: 0;
   z-index: 90;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
-  gap: 0.35rem;
   padding: 6rem 4rem;
   overflow: hidden;
+}
+
+.full-screen-nav-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  width: 100%;
+  max-width: 72rem;
+}
+
+.full-screen-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
 .full-screen-bg {
@@ -126,6 +142,16 @@
 @media (max-width: 768px) {
   .full-screen-nav {
     padding: 5rem 1.75rem;
+  }
+
+  .full-screen-nav-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .full-screen-links {
+    align-items: center;
   }
 
   .full-page-trigger {
