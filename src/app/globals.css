@@ -57,3 +57,65 @@ a {
 button {
   font-family: inherit;
 }
+
+::view-transition-group(.page-enter),
+::view-transition-group(.page-exit) {
+  animation-duration: 650ms;
+}
+
+::view-transition-old(.page-exit) {
+  animation: page-transition-out 1250ms ease both;
+}
+
+::view-transition-new(.page-enter) {
+  animation: page-transition-in 1650ms ease both;
+}
+
+.page-transition-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.page-transition-loader img {
+  width: 4rem;
+  height: 4rem;
+  animation: crop-logo-spin 1650ms linear infinite;
+}
+
+@keyframes page-transition-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes page-transition-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes crop-logo-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+
+  .page-transition-loader img {
+    animation-duration: 0s;
+  }
+}

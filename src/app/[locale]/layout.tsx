@@ -6,6 +6,7 @@ import TopRightNav from "@/src/components/TopRightNav";
 import TopLeftNav from "@/src/components/TopLeftNav";
 import FullPageNav from "@/src/components/FullPageNav";
 import Footer from "@/src/components/Footer";
+import PageTransition from "@/src/components/PageTransition";
 
 const i18nNamespaces = ["translation"];
 
@@ -28,7 +29,7 @@ export default async function Layout({
 
       {/* <TopRightNav /> */}
       <FullPageNav />
-      {children}
+      <PageTransition>{children}</PageTransition>
       <LanguageSwitcher />
       <Footer />
     </TranslationProvider>
