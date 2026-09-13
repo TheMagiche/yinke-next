@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { KeyboardEvent, useState } from "react";
 
 const galleryImages = [
   "yinke-gallery-1.webp",
@@ -17,6 +20,24 @@ type GallerySliderProps = {
 };
 
 export default function GallerySlider({ className = "" }: GallerySliderProps) {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const toggleExpanded = (index: number) => {
+    setExpandedIndex((currentIndex) =>
+      currentIndex === index ? null : index,
+    );
+  };
+
+  const handleTileKeyDown = (
+    event: KeyboardEvent<HTMLElement>,
+    index: number,
+  ) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      toggleExpanded(index);
+    }
+  };
+
   return (
     <section
       className={`gallery-collage ${className}`.trim()}
@@ -24,7 +45,15 @@ export default function GallerySlider({ className = "" }: GallerySliderProps) {
     >
       <div className="gallery-grid">
         {galleryImages.map((image, index) => (
-          <figure className="gallery-tile" key={image} tabIndex={0}>
+          <figure
+            className={`gallery-tile ${expandedIndex === index ? "is-expanded" : ""}`}
+            key={image}
+            tabIndex={0}
+            role="button"
+            aria-pressed={expandedIndex === index}
+            onClick={() => toggleExpanded(index)}
+            onKeyDown={(event) => handleTileKeyDown(event, index)}
+          >
             <Image
               className="gallery-image"
               src={`/yinke-gallery/${image}`}

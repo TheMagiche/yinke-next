@@ -41,38 +41,32 @@
   transition: filter 350ms ease, transform 500ms ease;
 }
 
-.gallery-grid:has(.gallery-tile:nth-child(1):hover),
-.gallery-grid:has(.gallery-tile:nth-child(1):focus-visible) {
+.gallery-grid:has(.gallery-tile:nth-child(1).is-expanded) {
   grid-template-columns: 1.8fr 1fr 1fr;
   grid-template-rows: 1.8fr 1fr 1fr;
 }
 
-.gallery-grid:has(.gallery-tile:nth-child(2):hover),
-.gallery-grid:has(.gallery-tile:nth-child(2):focus-visible) {
+.gallery-grid:has(.gallery-tile:nth-child(2).is-expanded) {
   grid-template-columns: 1fr 1.8fr 1fr;
   grid-template-rows: 1.8fr 1fr 1fr;
 }
 
-.gallery-grid:has(.gallery-tile:nth-child(3):hover),
-.gallery-grid:has(.gallery-tile:nth-child(3):focus-visible) {
+.gallery-grid:has(.gallery-tile:nth-child(3).is-expanded) {
   grid-template-columns: 1fr 1fr 1.8fr;
   grid-template-rows: 1.8fr 1fr 1fr;
 }
 
-.gallery-grid:has(.gallery-tile:nth-child(4):hover),
-.gallery-grid:has(.gallery-tile:nth-child(4):focus-visible) {
+.gallery-grid:has(.gallery-tile:nth-child(4).is-expanded) {
   grid-template-columns: 1.8fr 1fr 1fr;
   grid-template-rows: 1fr 1.8fr 1fr;
 }
 
-.gallery-grid:has(.gallery-tile:nth-child(5):hover),
-.gallery-grid:has(.gallery-tile:nth-child(5):focus-visible) {
+.gallery-grid:has(.gallery-tile:nth-child(5).is-expanded) {
   grid-template-columns: 1fr 1.8fr 1fr;
   grid-template-rows: 1fr 1.8fr 1fr;
 }
 
-.gallery-grid:has(.gallery-tile:nth-child(6):hover),
-.gallery-grid:has(.gallery-tile:nth-child(6):focus-visible) {
+.gallery-grid:has(.gallery-tile:nth-child(6).is-expanded) {
   grid-template-columns: 1fr 1fr 1.8fr;
   grid-template-rows: 1fr 1.8fr 1fr;
 }
@@ -83,20 +77,17 @@
   transform: scale(1.04);
 }
 
-.gallery-grid:has(.gallery-tile:nth-child(7):hover),
-.gallery-grid:has(.gallery-tile:nth-child(7):focus-visible) {
+.gallery-grid:has(.gallery-tile:nth-child(7).is-expanded) {
   grid-template-columns: 1.8fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1.8fr;
 }
 
-.gallery-grid:has(.gallery-tile:nth-child(8):hover),
-.gallery-grid:has(.gallery-tile:nth-child(8):focus-visible) {
+.gallery-grid:has(.gallery-tile:nth-child(8).is-expanded) {
   grid-template-columns: 1fr 1.8fr 1fr;
   grid-template-rows: 1fr 1fr 1.8fr;
 }
 
-.gallery-grid:has(.gallery-tile:nth-child(9):hover),
-.gallery-grid:has(.gallery-tile:nth-child(9):focus-visible) {
+.gallery-grid:has(.gallery-tile:nth-child(9).is-expanded) {
   grid-template-columns: 1fr 1fr 1.8fr;
   grid-template-rows: 1fr 1fr 1.8fr;
 }

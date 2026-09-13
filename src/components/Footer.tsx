@@ -38,12 +38,6 @@ const Footer = () => {
             <div></div>
           </span>
         </Link>
-        <Link className="footer-link" href={`${prefix}/contact`}>
-          <span>
-            {t("nav.legalNotice")}
-            <div></div>
-          </span>
-        </Link>
       </div>
     </div>
   );
