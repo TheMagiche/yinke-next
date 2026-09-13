@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { KeyboardEvent, useState } from "react";
 
@@ -21,6 +22,7 @@ type GallerySliderProps = {
 
 export default function GallerySlider({ className = "" }: GallerySliderProps) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleExpanded = (index: number) => {
     setExpandedIndex((currentIndex) =>
@@ -36,6 +38,10 @@ export default function GallerySlider({ className = "" }: GallerySliderProps) {
       event.preventDefault();
       toggleExpanded(index);
     }
+  };
+
+  const showSlide = (index: number) => {
+    setActiveIndex((index + galleryImages.length) % galleryImages.length);
   };
 
   return (
@@ -64,6 +70,38 @@ export default function GallerySlider({ className = "" }: GallerySliderProps) {
             />
           </figure>
         ))}
+      </div>
+
+      <div className="gallery-mobile-slider" aria-label="Yinke gallery slider">
+        <div className="gallery-mobile-frame">
+          <Image
+            className="gallery-mobile-image"
+            src={`/yinke-gallery/${galleryImages[activeIndex]}`}
+            alt={`Yinke gallery image ${activeIndex + 1}`}
+            fill
+            sizes="100vw"
+            priority
+          />
+          <button
+            className="gallery-mobile-control gallery-mobile-control-prev"
+            type="button"
+            aria-label="Previous gallery image"
+            onClick={() => showSlide(activeIndex - 1)}
+          >
+            <ChevronLeftIcon aria-hidden="true" />
+          </button>
+          <button
+            className="gallery-mobile-control gallery-mobile-control-next"
+            type="button"
+            aria-label="Next gallery image"
+            onClick={() => showSlide(activeIndex + 1)}
+          >
+            <ChevronRightIcon aria-hidden="true" />
+          </button>
+        </div>
+        <p className="gallery-mobile-count" aria-live="polite">
+          {activeIndex + 1} / {galleryImages.length}
+        </p>
       </div>
     </section>
   );
