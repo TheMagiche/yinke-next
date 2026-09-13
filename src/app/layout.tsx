@@ -28,19 +28,13 @@ export const metadata: Metadata = {
   ],
 };
 
-export function generateStaticParams() {
-  return i18nConfig.locales.map((locale) => ({ locale }));
-}
-
 export default function RootLayout({
   children,
-  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
 }>) {
   return (
-    <html lang={locale} className={`${display.variable} ${body.variable}`}>
+    <html className={`${display.variable} ${body.variable}`}>
       <link rel="icon" href="./favicon.ico" sizes="any" />
       <body className="font-body antialiased">{children}</body>
     </html>

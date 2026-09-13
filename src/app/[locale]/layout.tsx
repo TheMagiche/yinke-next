@@ -9,7 +9,14 @@ import Footer from "@/src/components/Footer";
 
 const i18nNamespaces = ["translation"];
 
-export default async function Layout({ children, params: { locale } }: any) {
+export default async function Layout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const { resources } = await initTranslations(locale, i18nNamespaces);
 
   return (

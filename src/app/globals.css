@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import url("../assets/styles/languageSwticher.css");
 @import url("../assets/styles/homepage.css");
 @import url("../assets/styles/topNav.css");
@@ -12,6 +8,10 @@
 @import url("../assets/styles/common.css");
 @import url("../assets/styles/about.css");
 @import url("../assets/styles/gallery.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --noir-void: #070707;
