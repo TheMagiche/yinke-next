@@ -34,14 +34,19 @@ export default function ContactInfo() {
           <span>{t("contact.landline")}</span>
           <div className="contact-value">{contactData.phone.landline}</div>
         </div>
-        <div className="field field-full">
+        <a
+          href={contactData.address.mapUrl}
+          className="field field-full"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <span>{t("contact.address")}</span>
           <div className="contact-value">
             {contactData.address.officeBuilding}, {contactData.address.city}
             <br />
             {t("contact.postal")}: {contactData.address.postal}
           </div>
-        </div>
+        </a>
         <a
           href={contactData.linkedin}
           className="field"
