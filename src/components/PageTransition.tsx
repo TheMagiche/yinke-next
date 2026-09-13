@@ -21,7 +21,7 @@ export default function PageTransition({
     }
 
     setShowLoader(true);
-    const timeout = window.setTimeout(() => setShowLoader(false), 1050);
+    const timeout = window.setTimeout(() => setShowLoader(false), 1500);
 
     return () => window.clearTimeout(timeout);
   }, [pathname]);
