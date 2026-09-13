@@ -6,10 +6,18 @@ import TopRightNav from "@/src/components/TopRightNav";
 import TopLeftNav from "@/src/components/TopLeftNav";
 import FullPageNav from "@/src/components/FullPageNav";
 import Footer from "@/src/components/Footer";
+import PageTransition from "@/src/components/PageTransition";
 
 const i18nNamespaces = ["translation"];
 
-export default async function Layout({ children, params: { locale } }: any) {
+export default async function Layout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const { resources } = await initTranslations(locale, i18nNamespaces);
 
   return (
@@ -21,7 +29,7 @@ export default async function Layout({ children, params: { locale } }: any) {
 
       {/* <TopRightNav /> */}
       <FullPageNav />
-      {children}
+      <PageTransition>{children}</PageTransition>
       <LanguageSwitcher />
       <Footer />
     </TranslationProvider>

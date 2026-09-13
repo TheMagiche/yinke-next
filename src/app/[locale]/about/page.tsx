@@ -15,7 +15,7 @@ export default function About() {
         <div className="page-hero-media">
           <video className="video-player" autoPlay loop muted playsInline>
             <source
-              src={require("../../../../public/bgvid.mp4")}
+              src="/bgvid.mp4"
               type="video/mp4"
             />
           </video>
