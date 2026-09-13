@@ -596,6 +596,19 @@
   color: var(--noir-fold);
 }
 
+.contact-info .contact-value {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--noir-paper);
+  line-height: 1.5;
+}
+
+.contact-info .field a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 @media (max-width: 1024px) {
   .homepage .contact-section {
     grid-template-columns: 1fr;

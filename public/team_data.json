@@ -1,0 +1,28 @@
+{
+    "team": [
+        {
+            "name": "Mr. Yu Xue Zhao",
+            "title": "about.team.yuXueZhao.title",
+            "image": "/Yinke-team/Yu_Xue_Zhao.webp",
+            "description": "about.team.yuXueZhao.description"
+        },
+        {
+            "name": "Ms. Linda Njonjo",
+            "title": "about.team.lindaNjonjo.title",
+            "image": "/Yinke-team/Linda_Njonjo.webp",
+            "description": "about.team.lindaNjonjo.description"
+        },
+        {
+            "name": "Legal and Compliance Officer",
+            "title": "about.team.billOyoo.title",
+            "image": "/Yinke-team/Bill_Oyoo.webp",
+            "description": "about.team.billOyoo.description"
+        },
+        {
+            "name": "Ms Qian Chunhua",
+            "title": "about.team.qianChunhua.title",
+            "image": "/Yinke-team/Qian_Chunhua.webp",
+            "description": "about.team.qianChunhua.description"
+        }
+    ]
+}

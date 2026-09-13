@@ -1,0 +1,29 @@
+{
+  "description": "As a trusted partner, we advise business leaders on their most important financial and strategic challenges. Our ambition is to provide our clients with the highest-quality bespoke services.:",
+  "services": [
+    {
+      "name": "Policy Compliance",
+      "description": "Our comprehensive Policy Compliance Services help businesses operate confidently within Kenya’s regulatory environment and across regional markets. We provide expert guidance on internal policies, operational standards, and inter-country requirements, such as cross-border duty rules, to help investors optimize costs, remain compliant, and protect their operations from unnecessary risk."
+    },
+    {
+      "name": "HR Consultancy",
+      "description": "Our HR Consultancy services help organizations build efficient, compliant, and high-performing workforces. We provide expert support in strategic workforce planning, recruitment, policy development, and employee management, ensuring your human capital is aligned with your business goals and your workplace remains productive, fair, and inclusive"
+    },
+    {
+      "name": "Due Diligence & Risk Assessment",
+      "description": "We provide comprehensive Due Diligence and Risk Assessment services to help organizations identify, analyze, and mitigate potential threats before they impact operations. Our industry-tailored assessments ensure informed decision-making, protect business assets, and support sustainable, compliant, and resilient operations."
+    },
+    {
+      "name": "Finance and Tax",
+      "description": "We provide comprehensive financial and tax consultancy services, including tax planning, compliance, and advisory solutions. Our goal is to optimize your financial processes, reduce liabilities, and ensure your business is equipped to make informed fiscal decisions."
+    },
+    {
+      "name": "Investment Consultancy",
+      "description": "Yingke Consultancy supports clients in making sound investment decisions by offering market analysis, portfolio strategy, and risk management solutions. Whether you're looking to diversify or maximize returns, our expertise ensures your investments align with your financial objectives."
+    },
+    {
+      "name": "Immigration compliance",
+      "description": "Yingke Consultancy provides reliable Immigration and Visa Processing services for individuals, investors, expatriates, and international companies operating in Kenya. We handle the full range of immigration needs—including Visas, Special Passes, Work Permits, Dependant Passes, and renewals—ensuring smooth entry, lawful stay, and full compliance with Kenyan immigration laws. Our team manages the entire process end-to-end, allowing clients to focus on their business while we take care of the paperwork and approvals."
+    }
+  ]
+}

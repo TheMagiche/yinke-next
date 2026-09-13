@@ -11,6 +11,7 @@
 @import url("../assets/styles/expertise.css");
 @import url("../assets/styles/common.css");
 @import url("../assets/styles/about.css");
+@import url("../assets/styles/gallery.css");
 
 :root {
   --noir-void: #070707;

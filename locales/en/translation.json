@@ -4,7 +4,9 @@
     "expertise": "Expertise",
     "about": "About",
     "contact": "Contact",
-    "legalNotice": "Legal notice"
+    "legalNotice": "Legal notice",
+    "previous": "Previous",
+    "next": "Next"
   },
   "languages": {
     "en": "English",
@@ -52,13 +54,61 @@
     "block4Text": "We pride ourselves to be strategic advisors, counselors and advocates for most of our clients. We are there with them doing deals, protecting and enhancing their market position and representing them in disputes all around the world. We facilitate significant international and Chinese investments and partnership opportunities. We understand that in the 21st century a law firm must be more than just a legal advisor. It must be a partner to its clients. It must understand their business expectations, know their aims and needs to maximise the potential of every opportunity to avoid the problems.",
     "block4Label": "MORE THAN LAWYERS",
     "block5Text": "We work in a team culture, co-operating and sharing information across lawyers, industry experts, practice groups, jurisdictions and continents. Whilst our network spans most geographic regions, our philosophy is to ensure that all the offices work as ONE to make available to you the unique Yingke integrated service, no matter where in the world your business takes you.",
-    "block5Label": "TEAM SPIRIT"
+    "block5Label": "TEAM SPIRIT",
+    "team": {
+      "yuXueZhao": {
+        "title": "Director",
+        "description": "With a visionary approach and extensive experience in international consultancy, Mr. Yu Xue Zhao oversees the strategic direction of Yingke Africa Consultancy Limited. His leadership ensures excellence across all operations."
+      },
+      "lindaNjonjo": {
+        "title": "Head of HR",
+        "description": "Ms. Linda Njonjo leads the Human Resources department with a focus on fostering talent, building an inclusive workplace culture, and ensuring compliance with HR policies across all levels."
+      },
+      "billOyoo": {
+        "title": "Director",
+        "description": "Mr. Bill Oyoo is the legal expert ensuring all operations and partnerships comply with local and international regulations. His vast knowledge of corporate law strengthens our commitment to integrity and professionalism."
+      },
+      "qianChunhua": {
+        "title": "Accountant",
+        "description": "Ms. Qian Chunhua manages financial processes with precision, ensuring transparent reporting and seamless financial operations to support our consultancy services."
+      }
+    }
   },
   "expertise": {
     "titleTop": "Expertise",
     "titleBottom": "& Mandates",
     "ourExpertise": "Our Expertise",
     "intro": "As a trusted partner, we advise business leaders on their most important financial and strategic challenges. Our ambition is to provide our clients with the highest-quality bespoke services.",
+    "servicesSlider": "Services slider",
+    "sliderNavigation": "Slider navigation",
+    "slideIndicators": "Slide indicators",
+    "goToSlide": "Go to slide {{number}}",
+    "services": [
+      {
+        "name": "Policy Compliance",
+        "description": "Our comprehensive Policy Compliance Services help businesses operate confidently within Kenya’s regulatory environment and across regional markets. We provide expert guidance on internal policies, operational standards, and inter-country requirements, such as cross-border duty rules, to help investors optimize costs, remain compliant, and protect their operations from unnecessary risk."
+      },
+      {
+        "name": "HR Consultancy",
+        "description": "Our HR Consultancy services help organizations build efficient, compliant, and high-performing workforces. We provide expert support in strategic workforce planning, recruitment, policy development, and employee management, ensuring your human capital is aligned with your business goals and your workplace remains productive, fair, and inclusive."
+      },
+      {
+        "name": "Due Diligence & Risk Assessment",
+        "description": "We provide comprehensive Due Diligence and Risk Assessment services to help organizations identify, analyze, and mitigate potential threats before they impact operations. Our industry-tailored assessments ensure informed decision-making, protect business assets, and support sustainable, compliant, and resilient operations."
+      },
+      {
+        "name": "Finance and Tax",
+        "description": "We provide comprehensive financial and tax consultancy services, including tax planning, compliance, and advisory solutions. Our goal is to optimize your financial processes, reduce liabilities, and ensure your business is equipped to make informed fiscal decisions."
+      },
+      {
+        "name": "Investment Consultancy",
+        "description": "Yingke Consultancy supports clients in making sound investment decisions by offering market analysis, portfolio strategy, and risk management solutions. Whether you are looking to diversify or maximize returns, our expertise ensures your investments align with your financial objectives."
+      },
+      {
+        "name": "Immigration compliance",
+        "description": "Yingke Consultancy provides reliable Immigration and Visa Processing services for individuals, investors, expatriates, and international companies operating in Kenya. We handle the full range of immigration needs, including Visas, Special Passes, Work Permits, Dependant Passes, and renewals, ensuring smooth entry, lawful stay, and full compliance with Kenyan immigration laws. Our team manages the entire process end-to-end, allowing clients to focus on their business while we take care of the paperwork and approvals."
+      }
+    ],
     "overview": "Overview",
     "overviewText": "Recognised expertise in the most complex M&A operations (sale processes, acquisitions, fundraising, carve-outs/spin-offs). Our hallmarks are confidentiality, independence and excellence in execution.",
     "competenciesTitle": "Our Competencies",
@@ -154,6 +204,12 @@
     "companyPlaceholder": "Organisation",
     "phone": "Phone",
     "phonePlaceholder": "+254 …",
+    "website": "Website",
+    "mobile": "Mobile",
+    "landline": "Landline",
+    "address": "Address",
+    "postal": "Postal code",
+    "linkedin": "LinkedIn",
     "message": "Message",
     "messagePlaceholder": "How can we assist you?",
     "submit": "Send message",

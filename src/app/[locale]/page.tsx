@@ -5,8 +5,9 @@ import AfricaMap, {
   MAP_DEFAULT_COUNTRY,
   mapFlagUrl,
 } from "@/src/components/AfricaMap";
-import ContactForm from "@/src/components/ContactForm";
+import ContactInfo from "@/src/components/ContactInfo";
 import OrigamiFolds from "@/src/components/OrigamiFolds";
+import GallerySlider from "@/src/components/GallerySlider";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import React, { useEffect, useLayoutEffect, useState } from "react";
@@ -104,39 +105,6 @@ export default function Home() {
         </article>
       </section>
 
-      {/* Practice areas */}
-      <section className="practice-block">
-        <div className="practice-media">
-          <video className="video-player" autoPlay loop muted playsInline>
-            <source src={require("../../../public/bgvid.mp4")} type="video/mp4" />
-          </video>
-          <div className="practice-media-mask" aria-hidden />
-        </div>
-        <div className="practice-body">
-          <p className="practice-eyebrow">{t("home.whatWeDo")}</p>
-          <h2>{t("home.bankingTitle")}</h2>
-          <p>{t("home.bankingText")}</p>
-          <Link href={`${prefix}/expertise`} className="origami-btn ghost">
-            <span>{t("home.whatWeDo")}</span>
-            <ArrowRightIcon className="w-4 h-4" />
-          </Link>
-        </div>
-      </section>
-
-      <section className="practice-block reverse">
-        <div className="practice-media">
-          <video className="video-player" autoPlay loop muted playsInline>
-            <source src={require("../../../public/bgvid.mp4")} type="video/mp4" />
-          </video>
-          <div className="practice-media-mask" aria-hidden />
-        </div>
-        <div className="practice-body">
-          <p className="practice-eyebrow">{t("home.whatWeDo")}</p>
-          <h2>{t("home.litigationTitle")}</h2>
-          <p>{t("home.litigationText")}</p>
-        </div>
-      </section>
-
       {/* Global / Local */}
       <section className="mindset-section">
         <OrigamiFolds variant="hero" />
@@ -147,12 +115,14 @@ export default function Home() {
             <span>{t("home.localInstinct")}</span>
           </h2>
           <p>{t("home.altSubText")}</p>
-          <Link href={`${prefix}/contact`} className="origami-btn">
-            <span>{t("home.reachUs")}</span>
+          <Link href={`${prefix}/expertise`} className="origami-btn">
+            <span>{t("home.whatWeDo")}</span>
             <ArrowRightIcon className="w-4 h-4" />
           </Link>
         </div>
       </section>
+
+      <GallerySlider />
 
       {/* Contact */}
       <section className="contact-section">
@@ -161,7 +131,7 @@ export default function Home() {
           <h2 className="fold-label">{t("home.reachUs")}</h2>
           <p>{t("home.altSubText")}</p>
         </div>
-        <ContactForm />
+        <ContactInfo />
       </section>
     </main>
   );

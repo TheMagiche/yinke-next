@@ -3,17 +3,11 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import OrigamiFolds from "@/src/components/OrigamiFolds";
+import GallerySlider from "@/src/components/GallerySlider";
+import teamData from "../../../../public/team_data.json";
 
 export default function About() {
   const { t } = useTranslation();
-
-  const tiles = [
-    { label: "about.block1Label", text: "about.block1Text" },
-    { label: "about.block2Label", text: "about.block2Text" },
-    { label: "about.block3Label", text: "about.block3Text" },
-    { label: "about.block4Label", text: "about.block4Text" },
-    { label: "about.block5Label", text: "about.block5Text" },
-  ];
 
   return (
     <main className="about-us">
@@ -42,14 +36,24 @@ export default function About() {
       </section>
 
       <section className="origami-grid">
-        {tiles.map((tile) => (
-          <article key={tile.label} className="origami-tile">
+        {teamData.team.map((member) => (
+          <article
+            key={member.name}
+            className="origami-tile team-tile"
+            tabIndex={0}
+          >
             <OrigamiFolds variant="panel" />
-            <span className="tile-label">{t(tile.label)}</span>
-            <p>{t(tile.text)}</p>
+            <img className="team-image" src={member.image} alt={member.name} />
+            <div className="team-details">
+              <h2>{member.name}</h2>
+              <span className="tile-label">{t(member.title)}</span>
+              <p>{t(member.description)}</p>
+            </div>
           </article>
         ))}
       </section>
+
+      <GallerySlider />
     </main>
   );
 }
