@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import OrigamiFolds from "@/src/components/OrigamiFolds";
 import GallerySlider from "@/src/components/GallerySlider";
 import teamData from "../../../../../public/team_data.json";
+import BlogList from "@/src/components/BlogList";
 
 export default function About() {
   const { t } = useTranslation();
@@ -29,6 +30,7 @@ export default function About() {
           </h1>
         </div>
       </section>
+      <GallerySlider />
 
       <section className="fold-intro">
         <h2>{t("about.cultureTitle")}</h2>
@@ -53,7 +55,8 @@ export default function About() {
         ))}
       </section>
 
-      <GallerySlider />
+
+      <BlogList />
     </main>
   );
 }

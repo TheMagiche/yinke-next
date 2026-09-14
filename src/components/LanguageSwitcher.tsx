@@ -27,6 +27,8 @@ const LanguageSwitcher = () => {
     ? i18n.language
     : i18nConfig.defaultLocale;
 
+  if (currentPathname.includes("/blog/")) return null;
+
   const handleChange = (newLocale: string) => () => {
     if (newLocale === currentLocale) return;
 
