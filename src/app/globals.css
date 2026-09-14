@@ -9,9 +9,8 @@
 @import url("../assets/styles/about.css");
 @import url("../assets/styles/gallery.css");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@config "../../tailwind.config.ts";
+@import "tailwindcss";
 
 :root {
   --noir-void: #070707;
