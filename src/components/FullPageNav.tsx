@@ -71,7 +71,7 @@ export default function FullPageNav() {
       {showFullPageNav && (
         <div className="full-page-trigger" onClick={close}>
           <Image src={logo} alt="crop-logo" quality={100} />
-          <XMarkIcon className="h-8 w-12 my-auto text-[var(--noir-void)]" />
+          <XMarkIcon className="h-8 w-12 my-auto text-(--noir-void)" />
         </div>
       )}
     </>

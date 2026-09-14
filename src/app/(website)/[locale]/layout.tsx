@@ -1,6 +1,7 @@
 import React from "react";
+import "../../globals.css";
 import initTranslations from "@/src/app/i18n";
-import TranslationProvider from "@/src/app/[locale]/TranslationProvider";
+import TranslationProvider from "@/src/app/(website)/[locale]/TranslationProvider";
 import LanguageSwitcher from "@/src/components/LanguageSwitcher";
 import TopRightNav from "@/src/components/TopRightNav";
 import TopLeftNav from "@/src/components/TopLeftNav";

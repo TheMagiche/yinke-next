@@ -5,5 +5,9 @@ export default function CMSLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return children;
+  return (
+    <html suppressHydrationWarning>
+      <body id="outstatic">{children}</body>
+    </html>
+  );
 }
