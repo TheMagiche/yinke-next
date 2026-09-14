@@ -1,6 +1,13 @@
 {
   "title": "zh",
-  "slug": "zh",
   "type": "object",
-  "properties": {}
+  "properties": {
+    "image": {
+      "title": "Image",
+      "description": "",
+      "required": false,
+      "fieldType": "Image",
+      "dataType": "image"
+    }
+  }
 }
