@@ -3,11 +3,9 @@ import "../../globals.css";
 import initTranslations from "@/src/app/i18n";
 import TranslationProvider from "@/src/app/(website)/[locale]/TranslationProvider";
 import LanguageSwitcher from "@/src/components/LanguageSwitcher";
-import TopRightNav from "@/src/components/TopRightNav";
-import TopLeftNav from "@/src/components/TopLeftNav";
 import FullPageNav from "@/src/components/FullPageNav";
 import Footer from "@/src/components/Footer";
-import PageTransition from "@/src/components/PageTransition";
+// import PageTransition from "@/src/components/PageTransition";
 
 const i18nNamespaces = ["translation"];
 
@@ -30,7 +28,9 @@ export default async function Layout({
 
       {/* <TopRightNav /> */}
       <FullPageNav />
-      <PageTransition>{children}</PageTransition>
+      {/* <PageTransition> */}
+        {children}
+      {/* </PageTransition> */}
       <LanguageSwitcher />
       <Footer />
     </TranslationProvider>

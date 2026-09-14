@@ -8,6 +8,7 @@ import AfricaMap, {
 import ContactInfo from "@/src/components/ContactInfo";
 import OrigamiFolds from "@/src/components/OrigamiFolds";
 import GallerySlider from "@/src/components/GallerySlider";
+import BlogList from "@/src/components/BlogList";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import React, { useEffect, useLayoutEffect, useState } from "react";
@@ -123,6 +124,8 @@ export default function Home() {
       </section>
 
       <GallerySlider />
+
+      <BlogList />
 
       {/* Contact */}
       <section className="contact-section">
