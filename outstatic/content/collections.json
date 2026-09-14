@@ -4,5 +4,11 @@
     "slug": "en",
     "path": "outstatic/content/en",
     "parent": null
+  },
+  {
+    "title": "zh",
+    "slug": "zh",
+    "path": "outstatic/content/zh",
+    "parent": null
   }
 ]
