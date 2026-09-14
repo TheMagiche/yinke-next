@@ -1,24 +1,7 @@
 {
-  "commit": "6dc544c62facb2f488494ac727083b34b15ed831",
-  "generated": "2026-09-14T03:03:09.831Z",
+  "commit": "cca30ff7ace2fa111beaf8201738b75744221d8e",
+  "generated": "2026-09-14T03:03:32.769Z",
   "metadata": [
-    {
-      "__outstatic": {
-        "commit": "0cf3655d5ed026bffbc66e353cd10b5feed7c83a",
-        "hash": "3865973489",
-        "path": "outstatic/content/zh/2026-nian-nong-li-xin-nian.mdx"
-      },
-      "author": {
-        "name": "Mark Chege",
-        "picture": "https://avatars.githubusercontent.com/u/26341425?v=4"
-      },
-      "collection": "zh",
-      "image": "https://www.almanac.com/sites/default/files/styles/or/public/image_nodes/2026%20year%20of%20the%20horse.jpg?itok=pOXGYa0c",
-      "publishedAt": "2026-09-14T01:02:33.481Z",
-      "slug": "2026-nian-nong-li-xin-nian",
-      "status": "published",
-      "title": "\n2026 年农历新年"
-    },
     {
       "__outstatic": {
         "commit": "6dc544c62facb2f488494ac727083b34b15ed831",
@@ -35,6 +18,23 @@
       "slug": "chinese-new-year-2026",
       "status": "published",
       "title": "Chinese New Year 2026"
+    },
+    {
+      "__outstatic": {
+        "commit": "cca30ff7ace2fa111beaf8201738b75744221d8e",
+        "hash": "1920995172",
+        "path": "outstatic/content/zh/2026-nian-nong-li-xin-nian.mdx"
+      },
+      "author": {
+        "name": "Linda Njonjo",
+        "picture": ""
+      },
+      "collection": "zh",
+      "image": "https://www.almanac.com/sites/default/files/styles/or/public/image_nodes/2026%20year%20of%20the%20horse.jpg?itok=pOXGYa0c",
+      "publishedAt": "2026-09-14T01:02:33.481Z",
+      "slug": "2026-nian-nong-li-xin-nian",
+      "status": "published",
+      "title": "\n2026 年农历新年"
     }
   ]
 }
