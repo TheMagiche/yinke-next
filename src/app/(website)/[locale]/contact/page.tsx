@@ -4,7 +4,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import OrigamiFolds from "@/src/components/OrigamiFolds";
 import ContactInfo from "@/src/components/ContactInfo";
-import GallerySlider from "@/src/components/GallerySlider";
+// import GallerySlider from "@/src/components/GallerySlider";
+import BlogList from "@/src/components/BlogList";
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -20,7 +21,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <GallerySlider />
+            <BlogList />
 
       <section className="fold-intro contact-form-section">
         <h2>{t("home.reachUs")}</h2>

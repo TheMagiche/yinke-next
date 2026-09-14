@@ -1,5 +1,6 @@
 "use client";
 
+import BlogList from "@/src/components/BlogList";
 import GallerySlider from "@/src/components/GallerySlider";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -110,6 +111,7 @@ export default function Expertise() {
       </section>
 
       <GallerySlider />
+       <BlogList />
     </main>
   );
 }

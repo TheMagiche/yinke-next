@@ -8,6 +8,7 @@
 @import url("../assets/styles/common.css");
 @import url("../assets/styles/about.css");
 @import url("../assets/styles/gallery.css");
+@import url("../assets/styles/blog.css");
 
 @config "../../tailwind.config.ts";
 @import "tailwindcss";
