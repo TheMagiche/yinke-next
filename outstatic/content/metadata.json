@@ -1,11 +1,11 @@
 {
-  "commit": "",
-  "generated": "2026-09-14T00:59:46.174Z",
+  "commit": "58c50d0239edc98a4a6e2ca8e9c8f99ebb112455",
+  "generated": "2026-09-14T01:02:18.746Z",
   "metadata": [
     {
       "__outstatic": {
-        "commit": "",
-        "hash": "3035544108",
+        "commit": "58c50d0239edc98a4a6e2ca8e9c8f99ebb112455",
+        "hash": "1803442891",
         "path": "outstatic/content/en/chinese-new-year-2026.mdx"
       },
       "author": {
@@ -13,6 +13,7 @@
         "picture": "https://avatars.githubusercontent.com/u/26341425?v=4"
       },
       "collection": "en",
+      "image": "https://www.almanac.com/sites/default/files/styles/or/public/image_nodes/2026%20year%20of%20the%20horse.jpg?itok=pOXGYa0c",
       "publishedAt": "2026-09-14T00:58:57.051Z",
       "slug": "chinese-new-year-2026",
       "status": "published",
