@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Outfit } from "next/font/google";
-import "./globals.css";
-import i18nConfig from "@/src/app/i18nConfig";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],

@@ -4,7 +4,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import OrigamiFolds from "@/src/components/OrigamiFolds";
 import GallerySlider from "@/src/components/GallerySlider";
-import teamData from "../../../../public/team_data.json";
+import teamData from "../../../../../public/team_data.json";
 
 export default function About() {
   const { t } = useTranslation();
